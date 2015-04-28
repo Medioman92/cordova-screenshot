@@ -58,8 +58,9 @@
     }
 
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIImageWriteToSavedPhotosAlbum(*image, nil, nil, nil);
 	NSData *imageData = UIImageJPEGRepresentation(image,[quality floatValue]);
-	[imageData writeToFile:jpgPath atomically:NO];
+	//[imageData writeToFile:jpgPath atomically:NO];
 
 	UIGraphicsEndImageContext();
 
